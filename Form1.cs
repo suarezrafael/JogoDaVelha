@@ -72,6 +72,7 @@ namespace JogoDaVelha
         {
             if (!string.IsNullOrEmpty(btn1.Text))
                 return;
+
             if (turno == "j1")
             {
                 btn1.Text = jogador1;
@@ -87,9 +88,26 @@ namespace JogoDaVelha
 
         private void VerificarVencedor()
         {
-            if (btn1.Text == jogador1
-            && btn2.Text == jogador1
-            && btn3.Text == jogador1)
+            if (
+                // horizontal
+                (btn1.Text == btn2.Text && btn2.Text == btn3.Text && btn3.Text != "")
+                 ||
+                (btn4.Text == btn5.Text && btn5.Text == btn6.Text && btn6.Text != "")
+                  ||
+                (btn7.Text == btn8.Text && btn8.Text == btn9.Text && btn9.Text != "")
+                ||
+                // vertical
+                (btn1.Text == btn4.Text && btn4.Text == btn7.Text && btn7.Text != "")
+                ||
+                (btn2.Text == btn5.Text && btn5.Text == btn8.Text && btn8.Text != "")
+                ||
+                (btn3.Text == btn6.Text && btn6.Text == btn9.Text && btn9.Text != "")
+                ||
+                // diagonal
+                (btn1.Text == btn5.Text && btn5.Text == btn9.Text && btn9.Text != "")
+                ||
+                (btn3.Text == btn5.Text && btn5.Text == btn7.Text && btn7.Text != "")
+               )
             {
                 ResetarPartida(jogador1);
             }
@@ -156,6 +174,7 @@ namespace JogoDaVelha
                 btn4.Text = jogador2;
                 turno = "j1";
             }
+            VerificarVencedor();
         }
 
         private void btn5_Click(object sender, EventArgs e)
@@ -172,6 +191,7 @@ namespace JogoDaVelha
                 btn5.Text = jogador2;
                 turno = "j1";
             }
+            VerificarVencedor();
         }
 
         private void btn6_Click(object sender, EventArgs e)
@@ -188,6 +208,7 @@ namespace JogoDaVelha
                 btn6.Text = jogador2;
                 turno = "j1";
             }
+            VerificarVencedor();
         }
 
         private void btn7_Click(object sender, EventArgs e)
@@ -204,6 +225,7 @@ namespace JogoDaVelha
                 btn7.Text = jogador2;
                 turno = "j1";
             }
+            VerificarVencedor();
         }
 
         private void btn8_Click(object sender, EventArgs e)
@@ -220,6 +242,7 @@ namespace JogoDaVelha
                 btn8.Text = jogador2;
                 turno = "j1";
             }
+            VerificarVencedor();
         }
 
         private void btn9_Click(object sender, EventArgs e)
@@ -236,6 +259,7 @@ namespace JogoDaVelha
                 btn9.Text = jogador2;
                 turno = "j1";
             }
+            VerificarVencedor();
         }
     }
 }

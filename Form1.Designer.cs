@@ -184,7 +184,7 @@
             // btn5
             // 
             btn5.Font = new Font("Rockwell Extra Bold", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn5.Location = new Point(195, 169);
+            btn5.Location = new Point(196, 169);
             btn5.Name = "btn5";
             btn5.Size = new Size(165, 136);
             btn5.TabIndex = 5;
